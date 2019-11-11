@@ -1,0 +1,15 @@
+Simple Linear Regression:
+* There exists only one independent variable
+* y= b0 + xb1 (equation of a straight line "The trend line"), y - the dependent variable, x - the independent variable
+* Here y is directly proportional to x, with b1 as the coefficient of proportion, that defines how a unit change in x affects y.
+* b0 is the constant term, it is the y-intercept which gives the value of the dependent variable y if the independent variable x is zero
+* b1 is the gradient that defines increase in y with increase in x.
+* In order to find the best-fitting line, the line with min error is chosen.
+* For each line the error- sum(yi - yi^) is computed, where yi is the actual value and yi^ is the predicted value from the ML model.
+#
+* The problem in hand reads a dataset that has 2 columns, Years of Experience and Salary
+* We use a simple linear regression model to find the correlation between both. 
+* Most Simple linear regression model take care of feature scaling.
+* Create the regressor, fit the train dataset. the regressor learns from the train data
+* Predict independent data values on the test data with the regressor
+* Compare the predicted values with the original test data
