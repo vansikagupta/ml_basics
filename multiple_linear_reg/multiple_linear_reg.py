@@ -39,3 +39,25 @@ y_pred = regressor.predict(X_test)
 
 
 #Building the optimal model using Backward Elimination
+import statsmodels.regression.linear_model as sm
+X = np.append(arr = np.ones((X.shape[0],1)).astype(int), values = X, axis = 1)
+X_opt = X[:, [0, 1, 2, 3, 4, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
+#x2 has the highest p-value which is greater then the significance level 0.05, thus remove x2 and repeat steps
+X_opt = X[:, [0, 1, 3, 4, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
+#x1 has the highest p-value which is greater then the significance level 0.05, thus remove x2 and repeat steps
+X_opt = X[:, [0, 3, 4, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
+#x2 in X_opt (4th column in X)  has the highest p-value which is greater then the significance level 0.05, thus remove x2 and repeat steps
+X_opt = X[:, [0, 3, 5]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
+#x2 (5th column)  has the highest p-value which is greater then the significance level 0.05, thus remove x2 and repeat steps
+X_opt = X[:, [0, 3]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
+#Now all independent variables have p-value less than 0.05, so our optimal team of independent variables is now ready

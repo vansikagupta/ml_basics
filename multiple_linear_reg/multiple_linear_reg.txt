@@ -18,3 +18,11 @@
 	* Score comparision
 * Steps to build Multiple linear Regression Model: prepare data, create regressor and fit data, make predictions, compare predictions
 * Initially we built the model with all independent variables but there can be some less statistically significant variables. So we now perform backward elimination.
+
+* In order to calculate the p-values of the independent variables , we require the statsmodels library.
+* Our model libraries take into account the constant variables but statsmodels library doesn't considers the constant coefficient. Thus we add a column of ones to our dataset:
+	y = b0x0 + b1x1 + b2x2 + ..., x0 = 1 thus b0x0 = b0
+* we create Ordinary Least square Regressor and fit all the independent variables fisrt.
+* remove the independent variable with highest p-value greater then significant level (0.05 here).
+* repeat the steps until all variables have p-value less then the significant level.
+* This set of independent variables will be the optimal set.
