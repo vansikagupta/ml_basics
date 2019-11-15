@@ -21,7 +21,7 @@ X.iloc[:, 1:3] = imputer.transform(X.iloc[:, 1:3])
 #Handling categorical data
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 le_x = LabelEncoder()
-X.iloc[:, 0] = le.fit_transform(X.iloc[:, 0])
+X.iloc[:, 0] = le_x.fit_transform(X.iloc[:, 0])
 #This will add attribute of order to the categorical feature, which is incorrect for this dataset
 #Using OneHotEncoder
 onehotencoder = OneHotEncoder(categorical_features = [0])

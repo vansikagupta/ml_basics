@@ -1,0 +1,20 @@
+* We have to find out how all the independent variables affect the dependent variable and build a model that can predict the dependent variable for new unknown dataset.
+* Here the equation is y = b0 + b1x1 + b2x2 + b3x3.....
+* There are certain assumptions that need to be true for a problem statement and dataset to successfully build a Multiple Linear Reg model
+* In our dataset, 'State' is a categorical variable. For any categorical variable we create new columns for each category.
+* The phenomenon where one or multiple independent variables predict another variable is called multi-colinearity. as aresult of this the model cannot distinguish their affects. This is known as the dummy-trap. If there are n distinct categories for a categorical variable, n-1 dummy variables should be included. Omit one out of n.
+* Null hypothesis is a hypothesis in statistics that proposes that no statistical significance exists in a given set of observations. This is assumed to be true until statistical evidences nullify it and propose other hypothesis.
+* P-value is a statistical measure that determines whether a hypothesis is correct. If p-value is below a certain pre-defined value, then scientists rule out the hypothesis that the variables of their experiment had no meaningful effect on the results.
+* Here we use p-value to remove the less statistically significant variables from our ML model
+
+##
+
+* We need to choose the imp ones out of all the independent variables. Why?? Garbage in Garbage out and you need to understand and explain the impact of each variable you choose on the dependent variable.
+* 5 methods on how to choose the independent variables:
+	* All-in : Input all variables when you are sure that all these variables are the potential predictor. Not recommended
+	* Backward elimination
+	* Forward selection
+	* Bidirectional backward selection
+	* Score comparision
+* Steps to build Multiple linear Regression Model: prepare data, create regressor and fit data, make predictions, compare predictions
+* Initially we built the model with all independent variables but there can be some less statistically significant variables. So we now perform backward elimination.
